@@ -1,47 +1,36 @@
-import { Geist, Geist_Mono, Outfit } from "next/font/google";
+import type { Metadata } from "next";
+import { IBM_Plex_Sans_Arabic, Reem_Kufi } from "next/font/google";
+
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
-import Navbar from "@/components/Navbar";
-import { Metadata } from "next";
 
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const plexArabic = IBM_Plex_Sans_Arabic({
+  variable: "--font-plex-arabic",
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const reemKufi = Reem_Kufi({
+  variable: "--font-reem-kufi",
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/icon.png",
-  },
+  title: "مشكاة — مكتبة مواد الدفعة",
+  description: "تصفح مواد وملفات كورسات الدفعة الدراسية بسهولة، بحثًا وفرزًا حسب المستوى والفصل.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ar" dir="rtl" className={outfit.variable} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="pt-20">
-            {children}
-          </main>
+    <html lang="ar" dir="rtl" className={`${plexArabic.variable} ${reemKufi.variable}`} suppressHydrationWarning>
+      <body className="flex min-h-screen flex-col font-sans antialiased">
+        <ThemeProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
