@@ -25,7 +25,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ar" dir="rtl" className={`${plexArabic.variable} ${reemKufi.variable}`} suppressHydrationWarning>
+    <html
+      lang="ar"
+      dir="rtl"
+      className={`${plexArabic.variable} ${reemKufi.variable}`}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <ThemeProvider>
           <Header />
