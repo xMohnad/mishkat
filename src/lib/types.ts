@@ -16,9 +16,10 @@ export interface CourseListResponse {
 }
 
 export interface CourseFileSummary {
-  id: string;
+  id: number;
   title: string;
   originalName: string;
+  url?: string;
   mimeType: string;
   extension: string;
   sizeBytes: number;
