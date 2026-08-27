@@ -19,8 +19,8 @@ const reemKufi = Reem_Kufi({
 });
 
 export const metadata: Metadata = {
-  title: "مشكاة — مكتبة مواد الدفعة",
-  description: "تصفح مواد وملفات كورسات الدفعة الدراسية بسهولة، بحثًا وفرزًا حسب المستوى والفصل.",
+  title: "مشكاة — مكتبة مقررات الدفعة",
+  description: "تصفح مقررات الدفعة وملفاتها",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

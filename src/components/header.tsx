@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "/", label: "الرئيسية" },
-  { href: "/courses", label: "الكورسات" },
+  { href: "/courses", label: "المقررات" },
 ];
 
 function NavLink({ href, label, onNavigate }: { href: string; label: string; onNavigate?: () => void }) {
@@ -68,7 +68,7 @@ function Header() {
               </nav>
               <div className="mt-auto flex items-center gap-2 text-xs text-muted-foreground">
                 <LibraryBig className="size-4" />
-                مكتبة مواد الدفعة
+                مكتبة مقررات الدفعة
               </div>
             </SheetContent>
           </Sheet>

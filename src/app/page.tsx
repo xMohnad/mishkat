@@ -17,12 +17,12 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <h2 className="font-display text-2xl text-foreground sm:text-3xl">كورسات هذا الفصل</h2>
-            <p className="mt-1.5 text-sm text-muted-foreground">أحدث المواد المضافة للفصل الدراسي الحالي</p>
+            <h2 className="font-display text-2xl text-foreground sm:text-3xl">مقررات هذا الفصل</h2>
+            <p className="mt-1.5 text-sm text-muted-foreground">أحدث مقررات هذا الفصل الدراسي</p>
           </div>
           <Button asChild variant="ghost" className="hidden shrink-0 sm:inline-flex">
             <Link href="/courses">
-              كل الكورسات
+              كل المقررات
               <ArrowLeft className="size-4" />
             </Link>
           </Button>
@@ -44,7 +44,7 @@ async function CurrentCourses() {
     return (
       <EmptyState
         icon={LibraryBig}
-        title="تعذّر تحميل الكورسات"
+        title="تعذّر تحميل المقررات"
         description={error instanceof ApiError ? error.message : "حدث خطأ غير متوقع، حاول تحديث الصفحة."}
       />
     );
@@ -54,8 +54,8 @@ async function CurrentCourses() {
     return (
       <EmptyState
         icon={LibraryBig}
-        title="لا توجد كورسات لهذا الفصل بعد"
-        description="بمجرد إضافة مواد الفصل الحالي، ستظهر هنا مباشرة."
+        title="لا توجد مقررات لهذا الفصل بعد"
+        description="بمجرد إضافة مقررات اهذا الفصل، ستظهر هنا مباشرة."
       />
     );
   }
@@ -78,12 +78,12 @@ function Hero() {
         <h1 className="font-display text-4xl leading-tight text-foreground sm:text-5xl">مشكاة</h1>
 
         <p className="max-w-xl text-balance text-base text-muted-foreground sm:text-lg">
-          مكتبة مواد الدفعة في مكان واحد.
+          مكتبة مقررات الدفعة في مكان واحد.
         </p>
 
         <Button asChild size="lg">
           <Link href="/courses">
-            تصفح كل الكورسات
+            تصفح كل المقررات
             <ArrowLeft className="size-4" />
           </Link>
         </Button>

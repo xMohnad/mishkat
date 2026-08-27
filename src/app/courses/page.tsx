@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const PAGE_SIZE = 12;
 
-export const metadata = { title: "الكورسات — مشكاة" };
+export const metadata = { title: "المقررات — مشكاة" };
 
 export default async function CoursesPage({ searchParams }: PageProps<"/courses">) {
   const params = await searchParams;
@@ -19,8 +19,8 @@ export default async function CoursesPage({ searchParams }: PageProps<"/courses"
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
       <div className="mb-8">
-        <h1 className="font-display text-2xl text-foreground sm:text-3xl">الكورسات</h1>
-        <p className="mt-1.5 text-sm text-muted-foreground">ابحث وصفّي المواد حسب المستوى والفصل ونوع الكورس</p>
+        <h1 className="font-display text-2xl text-foreground sm:text-3xl">المقررات</h1>
+        <p className="mt-1.5 text-sm text-muted-foreground">ابحث وصفّي المقررات حسب المستوى والفصل ونوع المقرر</p>
       </div>
 
       <div className="mb-8">
@@ -57,7 +57,7 @@ async function CoursesResults({ searchParams }: { searchParams: Record<string, s
     return (
       <EmptyState
         icon={SearchX}
-        title="تعذّر تحميل الكورسات"
+        title="تعذّر تحميل المقررات"
         description={error instanceof ApiError ? error.message : "حدث خطأ غير متوقع، حاول تحديث الصفحة."}
       />
     );
@@ -78,7 +78,7 @@ async function CoursesResults({ searchParams }: { searchParams: Record<string, s
   return (
     <div className="flex flex-col gap-8">
       <p className="text-sm text-muted-foreground">
-        {data.total} كورس · صفحة {data.page} من {totalPages}
+        {data.total} مقرر · صفحة {data.page} من {totalPages}
       </p>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -52,7 +52,7 @@ function CoursesToolbar() {
         <Input
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="ابحث باسم الكورس أو الدكتور..."
+          placeholder="ابحث باسم المقرر أو الدكتور..."
           className="ps-10"
         />
       </div>

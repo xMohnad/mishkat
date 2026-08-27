@@ -19,7 +19,7 @@ export default async function CourseDetailPage({ params }: PageProps<"/courses/[
         className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         <ArrowRight className="size-4" />
-        الكورسات
+        المقررات
       </Link>
 
       <Suspense fallback={<CourseDetailSkeleton />}>
@@ -37,7 +37,7 @@ async function CourseDetailContent({ id }: { id: string }) {
     // Re-throw non-API errors (e.g. Next.js notFound)
     if (!(error instanceof ApiError)) throw error;
 
-    return <EmptyState icon={FileStack} title="تعذّر تحميل الكورس" description={error.message} />;
+    return <EmptyState icon={FileStack} title="تعذّر تحميل المقرر" description={error.message} />;
   }
 
   return (
@@ -74,7 +74,7 @@ async function CourseDetailContent({ id }: { id: string }) {
             <EmptyState
               icon={FileStack}
               title="لا توجد ملفات بعد"
-              description="لم تتم إضافة أي ملفات لهذا الكورس حتى الآن."
+              description="لم تتم إضافة أي ملفات لهذا المقرر حتى الآن."
             />
           )
           : (
