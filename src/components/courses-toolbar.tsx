@@ -53,8 +53,18 @@ function CoursesToolbar() {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="ابحث باسم المقرر أو الدكتور..."
-          className="ps-10"
+          className="ps-10 pe-9"
         />
+        {searchValue && (
+          <button
+            type="button"
+            onClick={() => setSearchValue("")}
+            className="absolute end-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="مسح البحث"
+          >
+            <X className="size-4" />
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-3 gap-3 sm:w-auto sm:flex">
