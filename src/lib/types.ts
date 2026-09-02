@@ -19,7 +19,7 @@ export interface CourseFileSummary {
   id: number;
   title: string;
   originalName: string;
-  url?: string;
+  url: string;
   mimeType: string;
   extension: string;
   sizeBytes: number;
